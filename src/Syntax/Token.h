@@ -1,6 +1,8 @@
 #pragma once
 
+#ifdef DEBUG
 #include <iostream>
+#endif
 
 #include "Macros.h"
 #include "MagpieString.h"
@@ -25,13 +27,13 @@ namespace magpie
     TOKEN_EQ,
     TOKEN_EQEQ,
     TOKEN_NEQ,
-    
+
     // Infix operators. There is a different token type for each precedence.
     // The starting character determines the token type.
     TOKEN_COMPARE_OP, // < >
     TOKEN_TERM_OP,    // + -
     TOKEN_PRODUCT_OP, // * / %
-    
+
     // Keywords.
     TOKEN_AND,
     TOKEN_ASYNC,
@@ -149,7 +151,9 @@ namespace magpie
     bool is(TokenType type) const { return type_ == type; }
     
     virtual void reach();
+#ifdef DEBUG
     virtual void trace(std::ostream& out) const;
+#endif
     
   private:
     TokenType     type_;

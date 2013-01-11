@@ -1,4 +1,6 @@
+#ifdef DEBUG
 #include <iostream> // for debugging
+#endif
 #include <cstdlib>
 #include <cstring>
 

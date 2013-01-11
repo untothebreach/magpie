@@ -144,6 +144,7 @@ namespace magpie
     text_.reach();
   }
 
+#ifdef DEBUG
   void Token::trace(std::ostream& out) const
   {
     switch (type_)
@@ -167,4 +168,5 @@ namespace magpie
         out << typeString(type_);
     }
   }
+#endif
 }
