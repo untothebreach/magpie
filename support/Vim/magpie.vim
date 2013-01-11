@@ -13,12 +13,13 @@ elseif exists("b:current_syntax")
     finish
 endif
 
-syn keyword magpieSyntaxElement and async break case catch
-syn keyword magpieSyntaxElement def defclass nextgroup=magpieFunction skipwhite
-syn keyword magpieSyntaxElement do end else
-syn keyword magpieSyntaxElement false fn for if import in is
-syn keyword magpieSyntaxElement match not nothin or return then
-syn keyword magpieSyntaxElement throw true val var while xor
+syn keyword magpieSyntaxElement and or not xor
+syn keyword magpieSyntaxElement def defclass fn nextgroup=magpieFunction skipwhite
+syn keyword magpieSyntaxElement async break throw catch end
+syn keyword magpieSyntaxElement if else then
+syn keyword magpieSyntaxElement true false
+syn keyword magpieSyntaxElement for while
+syn keyword magpieSyntaxElement match val do var import in is nothing return case
 
 syn match magpieFunction
       \ "\%(\%(def\s\|defclass\s\|@\)\s*\)\@<=\h\%(\w\|\.\)*" contained
