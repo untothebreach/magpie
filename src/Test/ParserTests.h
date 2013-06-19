@@ -11,6 +11,7 @@ namespace magpie
 
   private:
     void parseModule();
+    void testCode(const char*, const char*);
   };
 }
 
